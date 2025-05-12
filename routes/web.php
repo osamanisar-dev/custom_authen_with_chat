@@ -25,7 +25,6 @@ Route::middleware(['web', 'blockAccess'])->group(function () {
     Route::post('/broadcast',[MessageController::class,'broadcast'])->name('broadcast');
     Route::post('/receive',[MessageController::class,'receive'])->name('receive');
     Route::post('/search',[ChatController::class,'search'])->name('search.chat');
-
 });
 
 
@@ -37,13 +36,10 @@ Route::middleware(['web', 'ifLogin'])->group(function () {
     Route::post('/verify-otp',[ForgetPasswordController::class,'verifyOtp'])->name('verify-otp');
     Route::post('/change-password',[ForgetPasswordController::class,'changePasswords'])->name('change-password');
     Route::post('/check-password',[ForgetPasswordController::class,'checkPasswords'])->name('passwords.check');
-
 });
-
 
 Route::get('/register',[RegisterController::class,'register']);
 Route::post('/register',[RegisterController::class,'add'])->name('register.submit');
-
 
 Route::post('/logout',[LoginController::class,'logout'])->name('logout');
 
