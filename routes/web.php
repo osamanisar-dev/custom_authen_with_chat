@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::redirect('/', '/dashboard');
+
 Route::middleware(['web', 'blockAccess'])->group(function () {
     Route::get('/dashboard',[RegisterController::class,'dashboard'])->name('dashboard');
     Route::get('/show_chats',[ChatController::class,'showChats'])->name('chat.page');

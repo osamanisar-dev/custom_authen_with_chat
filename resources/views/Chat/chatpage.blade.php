@@ -72,9 +72,8 @@
                                 <p style="padding: 10px 0 0 50px; color: grey">
                                     3 minutes ago
                                 </p>
-
                             </div>
-                            <form method="POST" action="{{route('start.chat',['user' => $user, 'sender' => $sender])}}">
+                            <form method="POST" action="{{route('start.chat',['userId' => $user->id, 'senderId' => $sender->id])}}">
                                 @csrf
                                 <button type="submit" class="btn btn-primary">Chat</button>
                             </form>
